@@ -28,17 +28,21 @@ ut_test_list_t		*ut_create_list_(ut_test f, char *n)
 	return (tmp);
 }
 
-void			ut_add_test(ut_test f, char *n)
+void			ut_add_test_(ut_test f, char *n)
 {
 	ut_test_list_t	*tmp;
 
 	if (!ut_tests)
+	{
 		ut_tests = ut_create_list_(f, n);
+	}
 	else
 	{
 		tmp = ut_tests;
 		while (tmp->next)
+		{
 			tmp = tmp->next;
+		}
 		tmp->next = ut_create_list_(f, n);
 	}
 }
@@ -75,7 +79,7 @@ void	ut_run_test(ut_test_list_t *t_, int *i_, int *_test_fails)
 	ut_last_cond = '\0';
 }
 
-int			ut_run_all_tests()
+int			ut_run_all_tests_(void)
 {
 	int		_test_fails;
 	int		count;
@@ -98,12 +102,7 @@ int			ut_run_all_tests()
 		ret = 0;
 		if (setjmp(ut_env))
 		{
-			printf("["C_RED"FAIL"C_CLEAR"] %s"C_BLUE"SEGV"C_CLEAR, ut_test_symbol); \
-			if (ut_last_cond)
-				printf(" ERROR: %s", ut_last_cond);
-			printf("\n");
-			*ut_test_symbol = '\0';
-			ut_last_cond = '\0';
+			UT_SEGV(tmp);
 			_test_fails++;
 		}
 		else
@@ -121,29 +120,4 @@ int			ut_run_all_tests()
 int	strequ(const char *s1, const char *s2)
 {
 	return (s1 && s2 && strcmp(s1, s2) == 0);
-}
-
-char *re_replace(char *str, char *pattern, char *replacement)
-{
-	int ret = 0;
-	int cnt = 0;
-	int offset = 0;
-	char temp[1000000];
-	char *output;
-	bzero(temp, 1000000);
-	regex_t reg;
-	regmatch_t pm;
-	regcomp(&reg, pattern, REG_EXTENDED); /* REG_ICASE */
-	while(ret == 0) {
-		ret = regexec(&reg, str + offset, 1, &pm, 0);
-		if (ret != 0)
-			break;
-		strncat(temp, str + offset, pm.rm_so);
-		strcat(temp, replacement);
-		offset += pm.rm_eo;
-		cnt++;
-	}
-	strcat(temp, str + offset);
-	output = strdup(temp);
-	return (output);
 }
