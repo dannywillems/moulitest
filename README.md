@@ -33,6 +33,11 @@ Run only some tests
 	# e.g. To launch only the test 05 you can use
 	make ft_ls tests=^05
 
+Don't run NULL tests (libft)
+
+	Assign 0 to -DTESTNULL in Makefile (libft_tests) (respectively 1 if you want
+	to run NULL tests).
+
 Notes
 ---
 GNL
