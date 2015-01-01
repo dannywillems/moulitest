@@ -8,4 +8,7 @@ UT_TEST(ft_strchr)
 	UT_ASSERT_EQ(strchr(buf, 0), ft_strchr(buf, 0));
 	UT_ASSERT_EQ(ft_strchr(buf, 'J'), buf);
 	UT_ASSERT_EQ(ft_strchr(buf, 'z'), 0);
+
+	if (TESTNULL)
+		ft_strchr(NULL, 0);
 }

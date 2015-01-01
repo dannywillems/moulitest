@@ -8,4 +8,7 @@ UT_TEST(ft_strdup)
 	UT_ASSERT_EQ(strcmp(ft_strdup("aaaaa"), "aaaaa"), 0);
 	UT_ASSERT_EQ(strcmp(ft_strdup(""), ""), 0);
 	UT_ASSERT_NEQ(c, ft_strdup(c));
+
+	if (TESTNULL)
+		ft_strdup(NULL);
 }

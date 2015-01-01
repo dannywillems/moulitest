@@ -13,4 +13,11 @@ UT_TEST(ft_strstr)
 	UT_ASSERT_EQ(strstr(buf2, "ozaraboze"), ft_strstr(buf2, "ozaraboze"));
 	UT_ASSERT_EQ(ft_strstr(buf, "BWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"), NULL);
 	UT_ASSERT(strstr("", "") == ft_strstr("", ""));
+
+	if (TESTNULL)
+	{
+		ft_strstr(NULL, "42");
+		ft_strstr("42", NULL);
+		ft_strstr(NULL, NULL);
+	}
 }

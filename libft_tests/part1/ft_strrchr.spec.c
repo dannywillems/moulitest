@@ -9,4 +9,10 @@ UT_TEST(ft_strrchr)
 	UT_ASSERT_EQ(ft_strrchr(buf, 'z'), 0);
 	buf[5] = 0;
 	UT_ASSERT_EQ(ft_strrchr(buf, 'a'), buf);
+
+	if (TESTNULL)
+	{
+		ft_strrchr(NULL, 'a');
+		ft_strrchr(NULL, 0);
+	}
 }

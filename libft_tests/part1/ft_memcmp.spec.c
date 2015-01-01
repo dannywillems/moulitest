@@ -10,4 +10,11 @@ UT_TEST(ft_memcmp)
 	UT_ASSERT_EQ(ft_memcmp("aab", "aac", 2), 0);
 	UT_ASSERT_EQ(ft_memcmp("aww", "bpp", 0), 0);
 	UT_ASSERT(ft_memcmp("\200", "\0", 1) > 0);
+
+	if (TESTNULL)
+	{
+		ft_memcmp(NULL, "42", 0);
+		ft_memcmp("42", NULL, 0);
+		ft_memcmp(NULL, NULL, 0);
+	}
 }

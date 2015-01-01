@@ -37,4 +37,11 @@ UT_TEST(ft_memmove)
 	memmove(NULL, test, -100);
 	memmove(test, NULL, -100);
 	*/
+
+	if (TESTNULL)
+	{
+		ft_memmove(NULL, "42", 42);
+		ft_memmove("42", NULL, 42);
+		ft_memmove(NULL, NULL, 42);
+	}
 }

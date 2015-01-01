@@ -10,5 +10,10 @@ UT_TEST(ft_strncpy)
 	ft_strncpy(buf, "abcdefghi", 6);
 	UT_ASSERT_EQ(memcmp(buf, "abcdefghi", 6), 0);
 
-	ft_strncpy(NULL, NULL, 0);
+	if (TESTNULL)
+	{
+		ft_strncpy(NULL, NULL, 0);
+		ft_strncpy(NULL, "42", 42);
+		ft_strncpy("42", NULL, 42);
+	}
 }

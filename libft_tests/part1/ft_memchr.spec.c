@@ -37,7 +37,10 @@ UT_TEST(ft_memchr)
 		++i;
 	}
 
-	ft_memchr(NULL, 0, 0);
-	ft_memchr(NULL, 0, 10);
-	ft_memchr(NULL, -10, 10);
+	if (TESTNULL)
+	{
+		ft_memchr(NULL, 0, 0);
+		ft_memchr(NULL, 0, 10);
+		ft_memchr(NULL, -10, 10);
+	}
 }

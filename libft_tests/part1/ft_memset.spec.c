@@ -18,4 +18,7 @@ UT_TEST(ft_memset)
 	ft_memset(0, 0, 0);
 	ft_memset(0, 'A', 0);
 	UT_ASSERT(memcmp(memset(strdup("abcd"), 0, 0), ft_memset(strdup("abcd"), 0, 0), 5) == 0);
+
+	if (TESTNULL)
+		ft_memset(NULL, 0, 0);
 }

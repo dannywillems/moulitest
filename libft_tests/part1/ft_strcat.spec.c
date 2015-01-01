@@ -12,4 +12,11 @@ UT_TEST(ft_strcat)
 	ft_strcat(buf, "");
 	UT_ASSERT_EQ(strcmp(buf, "Bonjour."), 0);
 	UT_ASSERT_EQ(buf, ft_strcat(buf, ""));
+
+	if (TESTNULL)
+	{
+		ft_strcat(NULL, "42");
+		ft_strcat("42", NULL);
+		ft_strcat(NULL, NULL);
+	}
 }

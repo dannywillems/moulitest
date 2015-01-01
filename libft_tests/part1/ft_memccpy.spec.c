@@ -17,4 +17,11 @@ UT_TEST(ft_memccpy)
 	char dest[] = "abcdefghijklmnopqrstuvwxyz";
 	UT_ASSERT_EQ(ft_memccpy(dest, strdup("test\200string"), '\200', 12),
 		memccpy(dest, strdup("test\200string"), '\200', 12));
+
+	if (TESTNULL)
+	{
+		ft_memccpy(NULL, dest, 0, 0);
+		ft_memccpy(dest, NULL, 0, 0);
+		ft_memccpy(NULL, NULL, 0, 0);
+	}
 }

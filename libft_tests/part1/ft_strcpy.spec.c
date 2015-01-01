@@ -9,4 +9,11 @@ UT_TEST(ft_strcpy)
 
 	UT_ASSERT_EQ(strcmp(ft_strcpy(buf1, "abcde"), strcpy(buf1, "abcde")), 0);
 	UT_ASSERT_EQ(strcmp(ft_strcpy(buf1, "abc"), strcpy(buf1, "abc")), 0);
+
+	if (TESTNULL)
+	{
+		ft_strcpy(NULL, "42");
+		ft_strcpy("42", NULL);
+		ft_strcpy(NULL, NULL);
+	}
 }
