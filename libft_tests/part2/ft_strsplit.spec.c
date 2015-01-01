@@ -26,5 +26,6 @@ UT_TEST(ft_strsplit)
 	tt = ft_strsplit("", '*');
 	UT_ASSERT(tt &&  tt[0] == NULL);
 
-	ft_strsplit(NULL, 0);
+	if (TESTNULL)
+		ft_strsplit(NULL, 0);
 }

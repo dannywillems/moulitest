@@ -8,9 +8,11 @@ UT_TEST(ft_memdel)
 	ft_memdel(&mem);
 	UT_ASSERT_W(mem == NULL);
 
-	/* test edge cases */
-	// void	*mem2;
-	// mem2 = NULL;
-	// ft_memdel(NULL);
-	// ft_memdel(&mem2);
+	if (TESTNULL)
+	{
+		void	*mem2;
+		mem2 = NULL;
+		ft_memdel(&mem2);
+		ft_memdel(NULL);
+	}
 }

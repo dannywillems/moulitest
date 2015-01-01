@@ -7,4 +7,7 @@ UT_TEST(ft_strsub)
 	UT_ASSERT_EQ(ft_strsub(str, 0, (size_t)-10), NULL);
 	UT_ASSERT_EQ(strcmp(ft_strsub(str, 8, 8), "je serai"), 0);
 	UT_ASSERT_EQ(strcmp(ft_strsub(str, 0, 0), ""), 0);
+
+	if (TESTNULL)
+		ft_strsub(NULL, 0, 0);
 }

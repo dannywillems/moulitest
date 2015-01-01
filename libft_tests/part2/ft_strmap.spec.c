@@ -11,4 +11,7 @@ UT_TEST(ft_strmap)
 	free(src); src = NULL;
 
 	UT_ASSERT_EQ(strcmp(dst, "bcdef"), 0);
+
+	if (TESTNULL)
+		ft_strmap(NULL, map_test);
 }

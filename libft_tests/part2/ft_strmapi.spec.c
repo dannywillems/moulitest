@@ -11,4 +11,7 @@ UT_TEST(ft_strmapi)
 	free(src); src = NULL;
 
 	UT_ASSERT_EQ(strcmp(dst, "acegi"), 0);
+
+	if (TESTNULL)
+		ft_strmapi(NULL, mapi_test);
 }

@@ -7,5 +7,6 @@ UT_TEST(ft_strtrim)
 	UT_ASSERT_EQ(strcmp(ft_strtrim(""), ""), 0);
 	UT_ASSERT_EQ(strcmp(ft_strtrim("abc"), "abc"), 0);
 
-	ft_strtrim(NULL);
+	if (TESTNULL)
+		ft_strtrim(NULL);
 }
